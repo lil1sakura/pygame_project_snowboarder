@@ -11,7 +11,7 @@ from music_playback import stop_music, play_music, play_music_wrong
 if __name__ == '__main__':
     pygame.init()
     pygame.display.set_caption('snowboarder')
-    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    screen = pygame.display.set_mode((1900, 940))
     clock = pygame.time.Clock()
     fps = 60
     running = True
@@ -40,10 +40,10 @@ if __name__ == '__main__':
     Elka_spite = pygame.sprite.Group()
 
     # создание границ экрана
-    fridge_boarder = [Border(0, 1080, 1920, 1080, all_sprites, vertical_borders, horizontal_borders),
-                      Border(0, 0, 1920, 0, all_sprites, vertical_borders, horizontal_borders),
-                      Border(0, 0, 0, 1080, all_sprites, vertical_borders, horizontal_borders),
-                      Border(1920, 0, 1920, 1080, all_sprites, vertical_borders, horizontal_borders),
+    fridge_boarder = [Border(0, 940, 1900, 940, all_sprites, vertical_borders, horizontal_borders),
+                      Border(0, 0, 1900, 0, all_sprites, vertical_borders, horizontal_borders),
+                      Border(0, 0, 0, 940, all_sprites, vertical_borders, horizontal_borders),
+                      Border(1900, 0, 1900, 940, all_sprites, vertical_borders, horizontal_borders),
                       Border(0, -300, 1920, -300, all_sprites, vertical_borders, horizontal_borders)]
 
     fridge_elka = list()
@@ -52,8 +52,8 @@ if __name__ == '__main__':
     Skier = Skier(Skier_sprite, fridge_boarder)
     Skier_sprite.add(Skier)
 
-    heart_1 = Heart(heart_sprite, 1600, 0, Skier.hp)
-    heart_2 = Heart(heart_sprite, 1760, 0, Skier.hp)
+    heart_1 = Heart(heart_sprite, 1590, 0, Skier.hp)
+    heart_2 = Heart(heart_sprite, 1750, 0, Skier.hp)
 
     Menu_Start = Menu(screen, (100, 200, 255), (730, 300, 400, 200), 'p l a y', (760, 300))
     Menu_Restart = Menu(screen, (100, 200, 255), (640, 500, 640, 200), 'r e s t a r t', (665, 500))
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     Menu_table_point = Menu(screen, (100, 200, 255), (0, 200, 10000, 200), f'', (10, 220))
     Menu_doc = Menu(screen, (100, 200, 255), (1000, 200, 10000, 200), f'', (1000, 220))
     Menu_exit = Menu(screen, (100, 200, 255), (730, 700, 400, 200), f'e x i t', (760, 710))
-    Menu_go_home = Menu(screen, (100, 200, 255), (640, 800, 640, 200), f'g o h o m e', (647, 800))
+    Menu_go_home = Menu(screen, (100, 200, 255), (640, 740, 640, 170), f'g o h o m e', (647, 730))
 
     Point_analys = PointAnalysis()
 
@@ -131,7 +131,7 @@ if __name__ == '__main__':
                         flag_doc = True
                     if 730 < pos[0] < 1130 and 700 < pos[1] < 900 and not restart_play:
                         running = False
-                    if 640 < pos[0] < 1280 and 800 < pos[1] < 1000 and restart_play:
+                    if 640 < pos[0] < 1280 and 740 < pos[1] < 910 and restart_play:
                         restart_play = False
                         flag_music_menu = True
                         flag_music_play = True
